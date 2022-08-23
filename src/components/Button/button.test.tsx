@@ -29,7 +29,7 @@ describe('test button component', () => {
     expect(element).toBeInTheDocument();
     expect(element.tagName).toEqual('BUTTON');
     expect(element).toHaveClass('btn btn-default');
-    expect(element.disabled).toBeFalsy();
+    expect((element as any).disabled).toBeFalsy();
     fireEvent.click(element);
     expect(defaultProps.onClick).toHaveBeenCalled();
   })
