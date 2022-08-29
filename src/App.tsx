@@ -18,9 +18,9 @@ const App = () => {
       </div>
       <div>
         <Menu>
-          <MenuItem>1</MenuItem>
-          <MenuItem>2</MenuItem>
-          <MenuItem>3</MenuItem>
+          <MenuItem index={0}>1</MenuItem>
+          <MenuItem index={1}>2</MenuItem>
+          <MenuItem index={2}>3</MenuItem>
         </Menu>
       </div>
     </div>
