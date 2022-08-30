@@ -25,7 +25,7 @@ const Menu: FC<MenuProps> = (props: MenuProps) => {
   const { defaultIndex, className, mode, style, children, onSelect } = props;
   const [currentActive, setActive] = useState(defaultIndex);
   const classes = classNames('menu', className, {
-    'menu-vertical': mode === 'vertical' // vertical as default
+    [`menu-${mode}`]: mode // vertical as default
   })
 
   const handleSelect = (index: number) => {
