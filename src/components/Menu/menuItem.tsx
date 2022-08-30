@@ -3,7 +3,7 @@ import classNames from "classnames";
 import { MenuContext } from "./menu";
 
 export interface MenuItemProps {
-  index: number;
+  index?: number;
   disabled?: boolean;
   className?: string;
   style?: CSSProperties;
@@ -19,12 +19,14 @@ const MenuItem: FC<MenuItemProps> = (props: MenuItemProps) => {
   });
 
   const handleSelect = () => {
-    context.onSelect && !disabled && context.onSelect(index)
+    context.onSelect && !disabled && typeof index === 'number' && context.onSelect(index)
   }
 
   return (
     <li className={classes} style={style} onClick={handleSelect}>{children}</li>
   )
 }
+
+MenuItem.displayName = 'MenuItem';
 
 export default MenuItem;
