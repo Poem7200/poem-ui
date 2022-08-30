@@ -5,7 +5,7 @@ type MenuMode = 'horizontal' | 'vertical';
 type SelectCallback = (selectedIndex: number) => void;
 
 // Menu包括item和submenu
-interface MenuProps {
+export interface MenuProps {
   defaultIndex?: number; // menu的默认选中项（高亮）
   className?: string;
   mode?: MenuMode;
@@ -38,7 +38,7 @@ const Menu: FC<MenuProps> = (props: MenuProps) => {
   }
 
   return (
-    <ul className={classes} style={style}>
+    <ul className={classes} style={style} data-testid="test-menu">
       <MenuContext.Provider value={passedContext}>
         {children}
       </MenuContext.Provider>
