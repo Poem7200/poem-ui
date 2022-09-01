@@ -17,6 +17,7 @@ export interface MenuProps {
 interface IMenuContext {
   index: number;
   onSelect?: SelectCallback;
+  mode?: MenuMode;
 }
 
 export const MenuContext = createContext<IMenuContext>({ index: 0 });
@@ -26,7 +27,7 @@ const Menu: FC<MenuProps> = (props: MenuProps) => {
   const [currentActive, setActive] = useState(defaultIndex);
   const classes = classNames('menu', className, {
     [`menu-${mode}`]: mode // vertical as default
-  })
+  });
 
   const handleSelect = (index: number) => {
     setActive(index);
@@ -35,14 +36,15 @@ const Menu: FC<MenuProps> = (props: MenuProps) => {
 
   const passedContext: IMenuContext = {
     index: currentActive || 0,
-    onSelect: handleSelect
+    onSelect: handleSelect,
+    mode
   }
 
   const renderChildren = () => {
     return React.Children.map(children, (child, index) => {
       const childElement = child as React.FunctionComponentElement<MenuItemProps>;
       const { type: { displayName } } = childElement;
-      if (displayName === 'MenuItem') {
+      if (displayName === 'MenuItem' || displayName === 'SubMenu') {
         return React.cloneElement(childElement, {
           index
         })

@@ -2,6 +2,7 @@ import React from "react";
 import Button from "./components/Button";
 import Menu from "./components/Menu/menu";
 import MenuItem from "./components/Menu/menuItem";
+import SubMenu from "./components/Menu/subMenu";
 
 const App = () => {
   return (
@@ -18,9 +19,20 @@ const App = () => {
       </div>
       <div>
         <Menu>
-          <MenuItem index={0}>1</MenuItem>
-          <MenuItem index={1}>2</MenuItem>
-          <MenuItem index={2}>3</MenuItem>
+          <MenuItem>1</MenuItem>
+          <MenuItem>2</MenuItem>
+          <SubMenu title="3">
+            <MenuItem>3-1</MenuItem>
+            <MenuItem>3-2</MenuItem>
+          </SubMenu>
+        </Menu>
+        <Menu mode="vertical">
+          <MenuItem>1</MenuItem>
+          <MenuItem>2</MenuItem>
+          <SubMenu title="3">
+            <MenuItem>3-1</MenuItem>
+            <MenuItem>3-2</MenuItem>
+          </SubMenu>
         </Menu>
       </div>
     </div>
