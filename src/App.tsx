@@ -26,7 +26,7 @@ const App = () => {
             <MenuItem>3-2</MenuItem>
           </SubMenu>
         </Menu>
-        <Menu mode="vertical">
+        <Menu mode="vertical" defaultOpenSubMenus={['2']}>
           <MenuItem>1</MenuItem>
           <MenuItem>2</MenuItem>
           <SubMenu title="3">

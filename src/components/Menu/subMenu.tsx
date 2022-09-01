@@ -4,7 +4,7 @@ import { MenuContext } from './menu';
 import { MenuItemProps } from './menuItem';
 
 interface SubMenuProps {
-  index?: number;
+  index?: string;
   title: string;
   className?: string;
   children?: ReactNode;
@@ -13,7 +13,9 @@ interface SubMenuProps {
 const SubMenu: FC<SubMenuProps> = (props) => {
   const { index, title, className, children } = props;
   const context = useContext(MenuContext);
-  const [menuOpen, setMenuOpen] = useState(false);
+  const openSubMenus = context.defaultOpenSubMenus as string[];
+  const isOpened = context.mode === 'vertical' && openSubMenus.includes(index as string) ? true : false;
+  const [menuOpen, setMenuOpen] = useState(isOpened);
 
   const classes = classNames('menu-item submenu-item', className, {
     'is-active': context.index === index
@@ -50,7 +52,7 @@ const SubMenu: FC<SubMenuProps> = (props) => {
       const { type: { displayName } } = childElement;
       if (displayName === 'MenuItem') {
         return React.cloneElement(childElement, {
-          index
+          index: `${index}-${i}`
         })
       }
       else {

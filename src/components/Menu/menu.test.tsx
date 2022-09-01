@@ -5,12 +5,12 @@ import Menu, { MenuProps } from './menu';
 import MenuItem from './menuItem';
 
 const defaultMenuProps: MenuProps = {
-  defaultIndex: 0,
+  defaultIndex: '0',
   onSelect: jest.fn(),
   className: 'test-menu'
 }
 const verticalMenuProps: MenuProps = {
-  defaultIndex: 0,
+  defaultIndex: '0',
   mode: 'vertical'
 }
 const generateMenu = (props: MenuProps) => {
