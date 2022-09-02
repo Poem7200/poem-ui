@@ -93,6 +93,18 @@ describe('test Menu and MenuItem component', () => {
     fireEvent.click(wrapper.getByText('test submenu item'));
     expect(defaultMenuProps.onSelect).toHaveBeenCalledWith('3-0');
   })
-  // vertical点击后展示dropdown
-  // vertical默认展示下拉菜单的情况
+
+  it('click submenu show menuitems when mode is vertical', async () => {
+    cleanup();
+    const wrapper = render(generateMenu(verticalMenuProps));
+    wrapper.container.append(createStyleFile());
+    expect(wrapper.queryByText('test submenu item')).not.toBeVisible();
+    const subMenuItem = wrapper.getByText('submenu');
+    fireEvent.click(subMenuItem);
+    await wait(() => {
+      expect(wrapper.queryByText('test submenu item')).toBeVisible();
+    });
+  })
+  // TODO: vertical默认展示下拉菜单的情况
+  it('show default open menu when mode is vertical and set openSubMenus', () => {})
 })
