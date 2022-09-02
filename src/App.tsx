@@ -5,6 +5,10 @@ import MenuItem from "./components/Menu/menuItem";
 import SubMenu from "./components/Menu/subMenu";
 
 const App = () => {
+  const handleSelect = (index: string) => {
+    console.log(index);
+  }
+  
   return (
     <div className="App">
       <div>
@@ -18,7 +22,7 @@ const App = () => {
         <Button size="sm">small</Button>
       </div>
       <div>
-        <Menu>
+        <Menu onSelect={handleSelect}>
           <MenuItem>1</MenuItem>
           <MenuItem>2</MenuItem>
           <SubMenu title="3">

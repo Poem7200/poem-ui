@@ -19,7 +19,7 @@ const MenuItem: FC<MenuItemProps> = (props: MenuItemProps) => {
   });
 
   const handleSelect = () => {
-    context.onSelect && !disabled && typeof index === 'number' && context.onSelect(index)
+    context.onSelect && !disabled && typeof index === 'string' && context.onSelect(index)
   }
 
   return (
