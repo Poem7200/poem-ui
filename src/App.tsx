@@ -3,6 +3,8 @@ import Button from "./components/Button";
 import Menu from "./components/Menu/menu";
 import MenuItem from "./components/Menu/menuItem";
 import SubMenu from "./components/Menu/subMenu";
+import Tabs from "./components/Tabs/tabs";
+import TabItem from "./components/Tabs/tabItem";
 
 const App = () => {
   const handleSelect = (index: string) => {
@@ -38,6 +40,11 @@ const App = () => {
             <MenuItem>3-2</MenuItem>
           </SubMenu>
         </Menu>
+        <Tabs type="card">
+          <TabItem label="test tab 1">tab 1</TabItem>
+          <TabItem label="test tab 2">tab 2</TabItem>
+          <TabItem label="test tab 3" disabled>tab 3</TabItem>
+        </Tabs>
       </div>
     </div>
   );
