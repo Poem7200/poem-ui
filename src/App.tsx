@@ -5,6 +5,8 @@ import MenuItem from "./components/Menu/menuItem";
 import SubMenu from "./components/Menu/subMenu";
 import Tabs from "./components/Tabs/tabs";
 import TabItem from "./components/Tabs/tabItem";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 
 const App = () => {
   const handleSelect = (index: string) => {
@@ -45,6 +47,9 @@ const App = () => {
           <TabItem label="test tab 2">tab 2</TabItem>
           <TabItem label="test tab 3" disabled>tab 3</TabItem>
         </Tabs>
+      </div>
+      <div>
+        <FontAwesomeIcon icon={faCoffee} />
       </div>
     </div>
   );
