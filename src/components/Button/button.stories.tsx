@@ -11,11 +11,17 @@ const buttonMeta: ComponentMeta<typeof Button> = {
 
 export default buttonMeta
 
-export const Default: ComponentStory<typeof Button> = (args) => (
-  <Button {...args}>Default Button</Button>
+const Template: ComponentStory<typeof Button> = (args) => (
+  <Button {...args}></Button>
 )
+
+export const Default = Template.bind({})
+Default.args = {
+  children: 'DefaultButton'
+}
 Default.storyName = '默认按钮样式'
 
+// TODO: 改用template+bind的模式写story
 export const ButtonWithSize: ComponentStory<typeof Button> = () => (
   <>
     <Button size="lg">Large size</Button>
