@@ -17,7 +17,15 @@ const menuMeta: ComponentMeta<typeof Menu> = {
   //     control: 'color',
   //     description: 'normal test'
   //   }
-  // }
+  // },
+  parameters: {
+    controls: {
+      // 这里让mode这个属性用date控件控制了
+      matchers: {
+        date: /mode$/
+      }
+    }
+  }
 }
 export default menuMeta
 
@@ -63,5 +71,14 @@ COpenedMenu.argTypes = {
   // defaultIndex: {
   //   control: 'color'
   // }
+}
+// 这里写的是单个story的parameters控制
+COpenedMenu.parameters = {
+  backgrounds: {
+    values: [
+      { name: 'red', value: '#f00' },
+      { name: 'green', value: '#0f0' }
+    ]
+  }
 }
 COpenedMenu.storyName = '默认展开的纵向 Menu'
