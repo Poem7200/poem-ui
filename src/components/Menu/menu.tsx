@@ -24,7 +24,7 @@ interface IMenuContext {
 
 export const MenuContext = createContext<IMenuContext>({ index: '0' });
 
-const Menu: FC<MenuProps> = (props: MenuProps) => {
+export const Menu: FC<MenuProps> = (props: MenuProps) => {
   const { defaultIndex, className, mode, style, children, onSelect, defaultOpenSubMenus } = props;
   const [currentActive, setActive] = useState(defaultIndex);
   const classes = classNames('menu', className, {
