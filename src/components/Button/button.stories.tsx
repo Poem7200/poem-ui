@@ -20,6 +20,12 @@ Default.args = {
   children: 'DefaultButton'
 }
 Default.storyName = '默认按钮样式'
+// 在该story外部包裹一层，接收原来的story，返回一个新的story
+Default.decorators = [
+  (Story) => (
+    <div style={{ margin: '30px' }}><Story /></div>
+  )
+]
 
 // TODO: 改用template+bind的模式写story
 export const ButtonWithSize: ComponentStory<typeof Button> = () => (
