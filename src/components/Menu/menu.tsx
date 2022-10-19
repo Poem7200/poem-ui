@@ -7,12 +7,15 @@ type SelectCallback = (selectedIndex: string) => void;
 
 // Menu包括item和submenu
 export interface MenuProps {
-  defaultIndex?: string; // menu的默认选中项（高亮）
+  /** menu的默认选中项（高亮） */
+  defaultIndex?: string;
   className?: string;
+  /** 模式：横向（默认）、纵向 */
   mode?: MenuMode;
   style?: CSSProperties;
   children?: ReactNode;
   onSelect?: SelectCallback;
+  /** 默认展开的子菜单（纵向模式） */
   defaultOpenSubMenus?: string[];
 }
 interface IMenuContext {

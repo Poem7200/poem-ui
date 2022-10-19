@@ -4,6 +4,7 @@ import { MenuContext } from "./menu";
 
 export interface MenuItemProps {
   index?: string;
+  /** 禁用状态 */
   disabled?: boolean;
   className?: string;
   style?: CSSProperties;
