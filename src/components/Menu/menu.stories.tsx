@@ -3,7 +3,7 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 import Menu from "./menu";
 import SubMenu from "./subMenu";
 import MenuItem from "./menuItem";
-import mdx from './menu.mdx';
+// import mdx from './menu.mdx';
 
 const menuMeta: ComponentMeta<typeof Menu> = {
   component: Menu,
@@ -21,7 +21,7 @@ const menuMeta: ComponentMeta<typeof Menu> = {
   // },
   parameters: {
     docs: {
-      page: mdx
+      // page: mdx
     }
     // controls: {
     //   // 这里让mode这个属性用date控件控制了

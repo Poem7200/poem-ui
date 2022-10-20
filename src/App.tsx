@@ -18,42 +18,12 @@ const App = () => {
   
   return (
     <div className="App">
-      <div>
-        <Button btnType="primary">primary</Button>
-        <Button>default</Button>
-        <Button btnType="danger">danger</Button>
-        <Button btnType="link" href="www.baidu.com">
-          link
-        </Button>
-        <Button size="lg">large</Button>
-        <Button size="sm">small</Button>
+      <Button>test</Button>
+      <div className="mx-10">
+        <Button>test12</Button>
+        <Button>test123</Button>
       </div>
-      <div>
-        <Menu onSelect={handleSelect}>
-          <MenuItem>1</MenuItem>
-          <MenuItem>2</MenuItem>
-          <SubMenu title="3">
-            <MenuItem>3-1</MenuItem>
-            <MenuItem>3-2</MenuItem>
-          </SubMenu>
-        </Menu>
-        <Menu mode="vertical" defaultOpenSubMenus={['2']}>
-          <MenuItem>1</MenuItem>
-          <MenuItem>2</MenuItem>
-          <SubMenu title="3">
-            <MenuItem>3-1</MenuItem>
-            <MenuItem>3-2</MenuItem>
-          </SubMenu>
-        </Menu>
-        <Tabs type="card">
-          <TabItem label="test tab 1">tab 1</TabItem>
-          <TabItem label="test tab 2">tab 2</TabItem>
-          <TabItem label="test tab 3" disabled>tab 3</TabItem>
-        </Tabs>
-      </div>
-      <div>
-        <Icon icon={faCoffee} theme='primary' />
-      </div>
+      <Button>test</Button>
     </div>
   );
 };
